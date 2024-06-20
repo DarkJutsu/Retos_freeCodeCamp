@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python - Documentación Técnica</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main class="main-doc">
+      <nav id="navbar">
+        <header>
+          <h1>Python Documentación</h1>
+        </header>
+        <div>
+          <a href="#introduccion" class="nav-link">Introducción</a>
+          <a href="#estructura_de_datos" class="nav-link"
+            >Estructura de Datos</a
+          >
+          <a href="#condicionales" class="nav-link">Condicionales</a>
+          <a href="#bucles" class="nav-link">Bucles</a>
+          <a href="#funciones" class="nav-link">Funciones</a>
+          <a href="#referencias" class="nav-link">Referencias</a>
+        </div>
+      </nav>
+      <div class="content">
+        <section id="introduccion" class="main-section">
+          <header>
+            <h2>Introducción</h2>
+          </header>
+          <p>
+            Python es un lenguaje de programación potente y fácil de aprender.
+            Tiene estructuras de datos de alto nivel eficientes y un simple pero
+            efectivo sistema de programación orientado a objetos. La elegante
+            sintaxis de Python y su tipado dinámico, junto a su naturaleza
+            interpretada lo convierten en un lenguaje ideal para scripting y
+            desarrollo rápido de aplicaciones en muchas áreas, para la mayoría
+            de plataformas.
+          </p>
+        </section>
+        <section id="estructura_de_datos" class="main-section">
+          <header>
+            <h2>Estructura de Datos</h2>
+          </header>
+          <ul>
+            <li>
+              <p>
+                <b>Listas</b> Python tiene varios tipos de datos compuestos,
+                utilizados para agrupar otros valores. El más versátil es la
+                lista, la cual puede ser escrita como una lista de valores
+                separados por coma (ítems) entre corchetes. Las listas pueden
+                contener ítems de diferentes tipos, pero usualmente los ítems
+                son del mismo tipo.
+              </p>
+              <div class="code">
+                <code>
+                  fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi',
+                  'apple','banana']
+                </code>
+              </div>
+            </li>
+            <li>
+              <p>
+                <b>Tuplas y secuencias</b> Vimos que las listas y cadenas tienen
+                propiedades en común, como el indexado y las operaciones de
+                rebanado. Estas son dos ejemplos de datos de tipo secuencia.
+                Como Python es un lenguaje en evolución, otros datos de tipo
+                secuencia pueden agregarse. Existe otro dato de tipo secuencia
+                estándar: la tupla. Una tupla está formada por un número de
+                valores separados por comas.
+              </p>
+              <div class="code">
+                <code> t = 12345, 54321, 'hello!' </code>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section id="condicionales" class="main-section">
+          <header>
+            <h2>Condicionales</h2>
+          </header>
+          <p>
+            Los condicionales son instrucciones que se le dan a un programa para
+            que ejecute un bloque de código u otro si se cumplen determinados
+            requisitos. De este modo, puede adaptarse a distintas situaciones e
+            incluso responder ante usos o consultas inusuales.
+          </p>
+          <ul>
+            <li>
+              <p>
+                <b>if</b> Tal vez el tipo más conocido de sentencia sea el if.
+              </p>
+              <div class="code">
+                <code>
+                  if x < 0: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;x = 0 <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;print('Negative changed to zero')
+                  <br />
+                  elif x == 0: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;print('Zero') <br />
+                  elif x == 1: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;print('Single') <br />
+                  else: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;print('More')
+                </code>
+              </div>
+              <p>
+                Puede haber cero o más bloques elif, y el bloque else es
+                opcional. La palabra reservada elif es una abreviación de “else
+                if”, y es útil para evitar un sangrado excesivo. Una secuencia
+                if … elif … elif … sustituye las sentencias switch o case
+                encontradas en otros lenguajes.
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>match</b> Una sentencia match recibe una expresión y compara
+                su valor con patrones sucesivos dados en uno o más bloques case.
+                Esto es similar a grandes rasgos con una sentencia switch en C,
+                Java o JavaScript (y muchos otros lenguajes) pero es más similar
+                a la comparación de patrones en lenguajes como Rust o Haskell.
+                Sólo se ejecuta el primer patrón que coincide y también es capaz
+                de extraer componentes (elementos de una secuencia o atributos
+                de un objeto) de un valor y ponerlos en variables.
+              </p>
+              <div class="code">
+                <code>
+                  match status: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbspcase 400: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Bad
+                  request" <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;case 404: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Not
+                  found" <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;case 418: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "I'm a
+                  teapot" <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;case _: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+                  "Something's wrong with the internet"
+                </code>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section id="bucles" class="main-section">
+          <header>
+            <h2>Bucles</h2>
+          </header>
+          <ul>
+            <li>
+              <p>
+                <b>for</b> Los bucles for se basan en iteradores que recorren
+                todos los elementos de aquellos objetos que sean iterables:
+                listas, tuplas, cadenas. Ejecuta una pieza de código
+                repetidamente en función de la cantidad de elementos que
+                contenga el objeto iterable.
+              </p>
+              <div class="code">
+                <code>
+                  for w in words: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;print(w, len(w))
+                </code>
+              </div>
+            </li>
+            <li>
+              <p>
+                <b>while</b> Los bucles o loops while ejecutan los bloques de
+                código a los que afecta siempre y cuando la condición del bucle
+                sea verdadera. El bucle while se repite hasta que la condición
+                se ha cumplido un numero determinado de veces.
+              </p>
+              <div class="code">
+                <code>
+                  while True: <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;pass
+                </code>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section id="funciones" class="main-section">
+          <header>
+            <h2>Funciones</h2>
+          </header>
+          <p>
+            Una función en Python (y en cualquier otro lenguaje de programación)
+            es un bloque de líneas de código o un conjunto de instrucciones cuya
+            finalidad es realizar una tarea específica. Puede reutilizarse a
+            voluntad para repetir dicha tarea.
+            <br /><br />
+            La palabra reservada def se usa para definir funciones. Debe
+            seguirle el nombre de la función y la lista de parámetros formales
+            entre paréntesis. Las sentencias que forman el cuerpo de la función
+            empiezan en la línea siguiente, y deben estar con sangría.
+          </p>
+          <div class="code">
+            <code>
+              def fib(n): <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;a, b = 0, 1 <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;while a < n: <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(a, end=' ')
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a, b = b, a+b
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;print() <br />
+              <br />
+              fib(2000)
+            </code>
+          </div>
+        </section>
+        <section id="referencias" class="main-section">
+          <header>
+            <h2>Referencias</h2>
+          </header>
+          <p class="refc">
+            Documentación by
+            <a href="https://docs.python.org/es/3/tutorial/" target="_blank">
+              docs.python.org
+            </a>
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
